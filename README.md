@@ -1,6 +1,6 @@
 # griffler
 ## an application to deploy a webapp and test it
-this application will use kubernetes, aws and --- to deploy three services:
+this application will use kubernetes, aws and github actions to deploy three services:
 - griffler - a static instance
   - dashboard
   - db
