@@ -22,7 +22,7 @@ this application will use kubernetes, aws and github actions to deploy three ser
 ## the steps (Actions):
 - spin up griffler
 - on pr creation >
-- pull testapp repo @ PR and deploy to testapp-staging
+- pull testapp repo @ PR and deploy image to testapp-staging
 - pull and deploy testcluster using eks
 - deploy tester nodes using eks
 - run plawrite tests against testapp-staging
