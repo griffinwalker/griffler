@@ -11,7 +11,7 @@ this application will use kubernetes, aws and github actions to deploy three ser
     - rollback button to deploy the previous commit, before the PR
   - db of test runs
   - api
-- testapp - a webapp to be tested of the merged PR's 
+- testapp-staging - a webapp to be tested of the PR 
   - webpage - should have a number of elements that can be tested with playwright UI tests eg:  text input boxes, dropdown menu, hamburger menu, links etc
   - api - to be tested with playwright REST integration tests
 - test cluster - the master tester that runs the tests
@@ -22,11 +22,11 @@ this application will use kubernetes, aws and github actions to deploy three ser
 ## the steps (Actions):
 - spin up griffler
 - on pr creation >
-- pull and deploy testapp @ PR
+- pull testapp repo @ PR and deploy to testapp-staging
 - pull and deploy testcluster using eks
 - deploy tester nodes using eks
-- run tests plawrite tests against testapp
-- run performace tests (locust.io) against testapp
+- run plawrite tests against testapp-staging
+- run performace tests (locust.io) against testapp-staging
 - publish test results to griffler/db
-- on pr merge >
-- tear down everything except griffler
+- on pr merge > deploy testapp:master to new s3bucket testapp-prod
+- tear down everything except griffler and testapp-prod
