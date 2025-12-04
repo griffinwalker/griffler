@@ -1,0 +1,20 @@
+{
+  "name": "griffler-lambda-functions",
+  "version": "1.0.0",
+  "description": "Lambda functions for Griffler API",
+  "main": "index.js",
+  "scripts": {
+    "build": "node build.js",
+    "deploy": "terraform -chdir=terraform apply"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.600.0",
+    "@aws-sdk/client-s3": "^3.600.0",
+    "@aws-sdk/lib-dynamodb": "^3.600.0",
+    "@aws-sdk/s3-request-presigner": "^3.600.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "archiver": "^6.0.1"
+  }
+}
